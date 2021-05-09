@@ -4,7 +4,6 @@ const Discord = require("discord.js");
 const replies = require("./replies.json");
 const Client = require('./client/Client');
 const client = new Discord.Client();
-const config = require("./config.json");
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 var layla = 0;
