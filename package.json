@@ -9,7 +9,8 @@
     "url": "git+https://github.com/alice15311/Coom.git"
   },
   "dependencies": {
-    "discord.js": "^12.5.1"
+    "discord.js": "^12.5.1",
+    "dotenv": "^9.0.1"
   },
   "bugs": {
     "url": "https://github.com/alice15311/Coom/issues"

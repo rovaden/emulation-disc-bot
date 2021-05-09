@@ -1,3 +1,4 @@
+require('dotenv').config()
 const fs = require('fs')
 const Discord = require("discord.js");
 const replies = require("./replies.json");
@@ -21,7 +22,7 @@ client.on("ready", () => {
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
   const gen = client.channels.cache.get('743330977195229267');
-  gen.send('return of the king');
+  // gen.send('return of the king');
   client.user.setPresence( {
     status: 'online',
     afk: false,
@@ -55,6 +56,12 @@ client.on("guildDelete", guild => {
 // 		message.reply('There is no command called that!');
 // 	}
 // });
+
+client.on("message", async message => {
+    if(message.author.bot) return;
+    if(message.content.search("9") == -1) return;
+    message.reply("https://youtu.be/tKaEVOsHFls");
+});
 
 client.on("message", async message => {
   if(message.author != 264218467182313472) return;
@@ -116,4 +123,4 @@ client.on("message", async message => {
 })
 
 
-client.login(config.token);
+client.login(process.env.BOT_TOKEN);
