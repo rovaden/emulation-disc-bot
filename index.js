@@ -8,6 +8,7 @@ client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 var layla = 0;
 var alex = 0;
+var nine = 0;
 //minutes, seconds, milliseconds
 var time = 5 * 60 * 1000;
 var target =  Date.now();
@@ -58,8 +59,11 @@ client.on("guildDelete", guild => {
 
 client.on("message", async message => {
     if(message.author.bot) return;
+    nine += 1;
+    if(nine != 10) return;
     if(message.content.search("9") == -1) return;
     message.reply("https://youtu.be/tKaEVOsHFls");
+    nine = 0;
 });
 
 client.on("message", async message => {
