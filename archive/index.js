@@ -6,7 +6,6 @@ const Client = require('./client/Client');
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-var layla = 0;
 var alex = 0;
 var nine = 0;
 //minutes, seconds, milliseconds
@@ -65,19 +64,6 @@ client.on("message", async message => {
     message.reply("https://youtu.be/tKaEVOsHFls");
     nine = 0;
 });
-
-client.on("message", async message => {
-  if(message.author != 264218467182313472) return;
-  if (message.channel != 743330977195229267) return;
-  layla = layla + 1;
-  console.log(layla);
-  if (layla == 10){
-    message.reply("layla is a dumbass");
-    layla = 0;
-  } else {
-    return;
-  }
-})
 
 client.on("message", async message => {
   if (message.channel != 743330977195229267) return;
